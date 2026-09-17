@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f6);
+    color: #5a2945;
+}
+
+/* CABEÇALHO */
+
+header {
+    text-align: center;
+    padding: 35px 20px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    color: #e75480;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #7b4962;
+}
+
+
+/* CONTAINER */
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(260px, 1fr)
+    );
+
+    gap: 25px;
+}
+
+
+/* FLASH CARD */
+
+.card {
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.7s;
+
+    transform-style: preserve-3d;
+}
+
+
+/* VIRAR CARD */
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* FRENTE E VERSO */
+
+.card-front,
+.card-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 25px rgba(120, 50, 80, 0.18);
+
+    overflow: hidden;
+}
+
+
+/* FRENTE */
+
+.card-front {
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    text-align: center;
+}
+
+.card-front img {
+    width: 100%;
+    height: 245px;
+
+    object-fit: cover;
+}
+
+.card-front h2 {
+    font-size: 27px;
+    color: #e75480;
+
+    padding: 15px;
+}
+
+.card-front span {
+    background: #ffe0ec;
+
+    padding: 10px;
+
+    font-size: 14px;
+
+    color: #a33d63;
+}
+
+
+/* VERSO */
+
+.card-back {
+    background: linear-gradient(
+        145deg,
+        #e75480,
+        #c83b68
+    );
+
+    color: white;
+
+    transform: rotateY(180deg);
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.card-back h2 {
+    font-size: 28px;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+}
+
+.card-back h3 {
+    font-size: 16px;
+
+    margin-top: 8px;
+    margin-bottom: 5px;
+
+    color: #ffe5ef;
+}
+
+.card-back p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 8px;
+}
+
+
+/* INFORMAÇÃO */
+
+.info {
+    margin-top: 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    padding: 20px;
+
+    border-radius: 20px;
+}
+
+.info h2 {
+    color: #e75480;
+
+    margin-bottom: 8px;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    color: #8b5a70;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    .card {
+        height: 380px;
+    }
+
+    .card-front img {
+        height: 220px;
+    }
+}
